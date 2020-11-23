@@ -10,7 +10,8 @@ class CharacterStates(Enum):
     MOVE = 1
     ATTACK = 2
     DEAD = 3
-    DEFENCE = 4    
+    DEFENCE = 4
+    JUMP = 5
 
 class GameObjectTypes(Enum):
     STATIC_OBJECT = 0
@@ -140,7 +141,7 @@ def load_sequence(basename, ext, num, num_digits=1, offset=0,optimize=True):
 
 def main():
     # initialize
-    print("...is loading")
+    print("...is loading") 
 
     AGameLogic = GameLogic()
     AGameRender = Render(800,600,"Arcade_P1",AGameLogic.game_object_list)
