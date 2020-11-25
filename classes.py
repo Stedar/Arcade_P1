@@ -103,8 +103,8 @@ class Render:
         #game objects
         for i in self.game_object_list:
             i.update_frame(time.time())
-            self.screen.blit(i.image,(0,0))    
-            pygame.display.flip()
+            self.screen.blit(i.image,(i.pos.x,i.pos.y))    
+        pygame.display.flip()
 
 
 class GameLogic():
@@ -146,6 +146,7 @@ def main():
     AGameLogic = GameLogic()
     AGameRender = Render(800,600,"Arcade_P1",AGameLogic.game_object_list)
     AGameLogic.create_game_object(GameObjectTypes.DARK_ANGEL,0,0, "My Angel")
+    AGameLogic.create_game_object(GameObjectTypes.DARK_ANGEL,300,0, "My Angel")
         
 #    DarkAngel = CharachterDarkAngel();
 
